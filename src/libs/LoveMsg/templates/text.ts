@@ -1,3 +1,11 @@
+/*
+ * @Author: JiaoZhe
+ * @Date: 2022-03-12 14:23:38
+ * @LastEditors:
+ * @LastEditTime: 2022-03-12 15:34:33
+ * @FilePath: /notify-server/src/libs/LoveMsg/templates/text.ts
+ * @Description: 这个文件做了什么
+ */
 /**
  * @description 纯文本模板-企业微信消息通知
  * https://open.work.weixin.qq.com/api/doc/90000/90135/90236
@@ -8,18 +16,17 @@ import dayjs, { weekToday } from '../../../utils/dayjs'
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
 
-  let text = '早安呀，我可爱的鱼崽崽~\n'
+  let text = '早安呀，我可爱的xxx~\n'
 
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期日'].includes(week)) {
     text += `
-如果我鱼崽崽已经起床啦！崽崽向你说早安呦~，记得吃早饭呀😆\n
+如果我xxx已经起床啦！崽崽向你说xx呦~，记得吃早饭呀😆\n
 嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
-  }
-  else {
+  } else {
     text += `
-如果我鱼崽崽还没起床呀！崽崽就等着鱼崽起床给我说早安呦🤣
+如果我xxx还没起床呀！崽崽就等着xx起床给我说xx呦🤣
 嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
   }
 

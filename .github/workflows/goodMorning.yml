@@ -1,5 +1,6 @@
 name: GoodMorning
 on:
+  # 手动触发
   workflow_dispatch:
     branches:
       - master

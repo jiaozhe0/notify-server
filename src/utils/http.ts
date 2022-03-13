@@ -1,3 +1,11 @@
+/*
+ * @Author: JiaoZhe
+ * @Date: 2022-03-12 14:23:38
+ * @LastEditors:
+ * @LastEditTime: 2022-03-13 19:47:02
+ * @FilePath: /notify-server/src/utils/http.ts
+ * @Description: 这个文件做了什么
+ */
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import axios from 'axios'
 import dotenv from 'dotenv'
@@ -12,16 +20,16 @@ const instance = axios.create({
 instance.interceptors.response.use(
   (response) => {
     const res = response.data
+    console.log('res', res)
     // 正确状态
     // TODO: 这里只针对符合该条件的接口
-    if (res.code === 200)
-      return res.newslist
+    if (res.code === 200) return res.newslist
 
     return undefined
   },
   (error) => {
     console.log(`err${error}`) // for debug
-  },
+  }
 )
 
 const request = <T = any>(config: AxiosRequestConfig, options?: AxiosRequestConfig): Promise<T> => {
@@ -32,15 +40,13 @@ const request = <T = any>(config: AxiosRequestConfig, options?: AxiosRequestConf
         url: config,
       })
       // throw new Error('请配置正确的请求参数');
-    }
-    else {
+    } else {
       return instance.request<T, T>({
         url: config,
         ...options,
       })
     }
-  }
-  else {
+  } else {
     return instance.request<T, T>(config)
   }
 }
@@ -50,17 +56,17 @@ export function get<T = any>(config: AxiosRequestConfig, options?: AxiosRequestC
 
 export function getTian<T = any>(
   config: AxiosRequestConfig,
-  options?: AxiosRequestConfig,
+  options?: AxiosRequestConfig
 ): Promise<T> {
   return request(
     { ...config, params: { ...(config.params || {}), key: TIAN_API_KEY }, method: 'GET' },
-    options,
+    options
   )
 }
 
 export function post<T = any>(
   config: AxiosRequestConfig,
-  options?: AxiosRequestConfig,
+  options?: AxiosRequestConfig
 ): Promise<T> {
   return request({ ...config, method: 'POST' }, options)
 }

@@ -38,7 +38,7 @@ const goodWord = async () => {
       netEaseCloud,
       dayEnglish,
     }
-
+    console.log(data)
     const template = textTemplate(data)
     console.log('goodWord', template)
 

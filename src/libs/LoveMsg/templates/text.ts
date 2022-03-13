@@ -2,7 +2,7 @@
  * @Author: JiaoZhe
  * @Date: 2022-03-12 14:23:38
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-12 21:00:36
+ * @LastEditTime: 2022-03-13 22:16:58
  * @FilePath: /notify-server/src/libs/LoveMsg/templates/text.ts
  * @Description: 这个文件做了什么
  */
@@ -16,18 +16,18 @@ import dayjs, { weekToday } from '../../../utils/dayjs'
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
 
-  let text = '早安呀，我可爱的小七公主👸🏻~\n'
+  let text = '早安，我可爱的小七公主👸🏻~\n'
 
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期日'].includes(week)) {
     text += `
-如果我家小七已经起床啦！崽崽向你说xx呦~，记得吃早饭呀😆\n
-嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
+  如果我家小七还没起床呀！崽崽就等着xx起床给我说xx呦🤣
+  嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
   } else {
     text += `
-如果我家小七还没起床呀！崽崽就等着xx起床给我说xx呦🤣
-嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
+  如果我家小七已经起床啦，记得吃早饭呀😆\n
+  嗯哼哼~今天可是${week}哦，又是美好的一天哦~`
   }
 
   // 添加笑话

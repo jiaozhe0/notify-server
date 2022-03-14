@@ -1,8 +1,8 @@
 /*
  * @Author: JiaoZhe
  * @Date: 2022-03-12 14:23:38
- * @LastEditors:
- * @LastEditTime: 2022-03-13 19:47:02
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-14 08:42:32
  * @FilePath: /notify-server/src/utils/http.ts
  * @Description: 这个文件做了什么
  */
@@ -20,7 +20,6 @@ const instance = axios.create({
 instance.interceptors.response.use(
   (response) => {
     const res = response.data
-    console.log('res', res)
     // 正确状态
     // TODO: 这里只针对符合该条件的接口
     if (res.code === 200) return res.newslist
@@ -33,7 +32,6 @@ instance.interceptors.response.use(
 )
 
 const request = <T = any>(config: AxiosRequestConfig, options?: AxiosRequestConfig): Promise<T> => {
-  console.log('config', config)
   if (typeof config === 'string') {
     if (!options) {
       return instance.request<T, T>({

@@ -5,16 +5,16 @@
 import API from '../../api/loveMsg'
 import { wxNotify } from '../WxNotify'
 
-export const goodAfternoon = async() => {
-  const res = await API.getJoke()
+export const goodAfternoon = async () => {
+  const res = await API.getCaihongpi()
 
   let text = '今日份午安来喽:\n'
 
   text += `
 请欣赏以下雷人笑话😝\n`
-
-  text += `
-${res.map(n => `『${n.title}』${n.content}`).join('\n\n')}`
+  text += res
+  // text += `
+  // ${res.map(n => `『${n.title}』${n.content}`).join('\n\n')}`
 
   const template = {
     msgtype: 'text',

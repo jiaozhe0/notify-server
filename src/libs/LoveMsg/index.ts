@@ -1,3 +1,11 @@
+/*
+ * @Author: JiaoZhe
+ * @Date: 2022-03-12 14:23:38
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-14 08:31:23
+ * @FilePath: /notify-server/src/libs/LoveMsg/index.ts
+ * @Description: 这个文件做了什么
+ */
 /**
  * @name loveMsg
  * @description 入口
@@ -21,5 +29,6 @@ export default function main() {
   } else {
     // 早安
     goodMorning()
+    // goodAfternoon()
   }
 }

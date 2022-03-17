@@ -119,7 +119,7 @@ class API {
   // 雷人笑话
   async getJoke(num = 6) {
     const res = await getTian<JokeProps[]>({ url: LoveMsgURL.joke, params: { num } })
-    return res
+    return res?.[0]
   }
 
   // 一言
